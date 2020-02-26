@@ -328,6 +328,10 @@ d-i partman/confirm_nooverwrite boolean true
 # sources.list line will be left commented out
 #d-i apt-setup/local0/key string http://local.server/key
 
+# Do not scan any other CD/DVD for extra software
+d-i apt-setup/cdrom/set-next false
+d-i apt-setup/cdrom/set-first false
+
 # By default the installer requires that repositories be authenticated
 # using a known gpg key. This setting can be used to disable that
 # authentication. Warning: Insecure, not recommended.
