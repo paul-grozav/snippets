@@ -101,10 +101,15 @@ d-i netcfg/wireless_wep string
 ### Mirror settings
 # If you select ftp, the mirror/country string does not need to be set.
 #d-i mirror/protocol string ftp
-d-i mirror/country string manual
-d-i mirror/http/hostname string http.us.debian.org
-d-i mirror/http/directory string /debian
-d-i mirror/http/proxy string
+#d-i mirror/country string manual
+#d-i mirror/http/hostname string http.us.debian.org
+#d-i mirror/http/directory string /debian
+#d-i mirror/http/proxy string
+
+d-i mirror/protocol string ftp
+d-i mirror/ftp/hostname string ftp.ro.debian.org
+d-i mirror/ftp/directory string /debian
+d-i mirror/ftp/proxy string
 
 # Suite to install.
 #d-i mirror/suite string testing
