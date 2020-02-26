@@ -3,6 +3,8 @@
 # ============================================================================ #
 # Based on Debian's preseed example at:
 # https://www.debian.org/releases/stable/example-preseed.txt
+# Make sure that you use these boot parameters:
+# auto-install/enable=true preseed/url=https://gitlab.com/tancredi-paul-grozav/snippets/-/raw/master/debian_example.preseed
 # ============================================================================ #
 #### Contents of the preconfiguration file (for buster)
 ### Localization
