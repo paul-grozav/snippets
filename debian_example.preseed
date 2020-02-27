@@ -1,17 +1,26 @@
 # ============================================================================ #
 # Author: Tancredi-Paul Grozav <paul@grozav.info>
 # ============================================================================ #
-# - Based on Debian's preseed example at:
+# 1. Based on Debian's preseed example at:
 # https://www.debian.org/releases/stable/example-preseed.txt
-# - Make sure that you use these boot parameters in QEMU -curses:
+# 2. Running an automated install:
+#   2.1. QEMU-curses:
+#     Run QEMU like this:
+# qemu-system-x86_64 -curses -m 1G -boot d -cdrom ./debian_full.iso -hda hdd.img
+#     Once it switches to GRUB's graphics mode, press ESCAPE and wait a few
+#     seconds to drop you to a CLI. Then use these boot parameters:
 # install fb=none vga=normal auto-install/enable=true preseed/url=http://tiny.cc/gn2ikz hostname=myhost domain=example.com
-# - It also works with URL shortners like: http://tiny.cc/gn2ikz instead of
+#     You'll probably want to also run:
+# sed "/^.*linux.*\/vmlinuz-.* vga=normal /s/ quiet$/ bochs_drm.fbdev=off/" -i \
+# /boot/grub/grub.cfg
+#     In order to make it boot into text mode, no graphical resolution.
+# 3. It also works with URL shortners like: http://tiny.cc/gn2ikz instead of
 # this file's complete raw url.
-# - See more about preseeds at the official documentation:
+# 4. See more about preseeds at the official documentation:
 # https://www.debian.org/releases/stable/i386/apb.en.html
-# - This un-official document might also be helpful:
+# 5. This un-official document might also be helpful:
 # https://people.debian.org/~plessy/DebianInstallerDebconfTemplates.html
-# - This can be used to insert the preseed into an .iso, to avoid network
+# 6. This can be used to insert the preseed into an .iso, to avoid network
 # dependency: https://wiki.debian.org/DebianInstaller/Preseed/EditIso
 # ============================================================================ #
 #### Contents of the preconfiguration file (for buster)
