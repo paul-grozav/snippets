@@ -121,6 +121,10 @@ d-i mirror/ftp/hostname string ftp.ro.debian.org
 d-i mirror/ftp/directory string /debian
 d-i mirror/ftp/proxy string
 
+# If you are installing from a CD/DVD (without netinstall) It'll ask for a
+# mirror:
+d-i apt-setup/use_mirror boolean false
+
 # Suite to install.
 #d-i mirror/suite string testing
 # Suite to use for loading installer components (optional).
