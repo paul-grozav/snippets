@@ -8,6 +8,8 @@
 # It also works with URL shortners like: http://tiny.cc/gn2ikz
 # See more about preseeds at the official documentation:
 # https://www.debian.org/releases/stable/i386/apb.en.html
+# This un-official document might also be helpful:
+# https://people.debian.org/~plessy/DebianInstallerDebconfTemplates.html
 # ============================================================================ #
 #### Contents of the preconfiguration file (for buster)
 ### Localization
