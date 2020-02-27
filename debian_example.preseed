@@ -4,7 +4,7 @@
 # Based on Debian's preseed example at:
 # https://www.debian.org/releases/stable/example-preseed.txt
 # Make sure that you use these boot parameters:
-# auto-install/enable=true preseed/url=https://gitlab.com/tancredi-paul-grozav/snippets/-/raw/master/debian_example.preseed
+# auto-install/enable=true preseed/url=https://gitlab.com/tancredi-paul-grozav/snippets/-/raw/master/debian_example.preseed hostname=myhost domain=example.com
 # It also works with URL shortners like: http://tiny.cc/gn2ikz
 # See more about preseeds at the official documentation:
 # https://www.debian.org/releases/stable/i386/apb.en.html
