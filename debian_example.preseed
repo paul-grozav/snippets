@@ -479,5 +479,5 @@ d-i finish-install/reboot_in_progress note
 # These only change the current GRUB config. On update, these changes might be
 # overwritten. We should also update the default config file used to generate
 # future new GRUB configs.
-d-i preseed/late_command string in-target wget -qO- https://gitlab.com/tancredi-paul-grozav/snippets/-/raw/master/debian_example.preseed.sh | bash
+d-i preseed/late_command string in-target /bin/bash -c "wget -qO- https://gitlab.com/tancredi-paul-grozav/snippets/-/raw/master/debian_example.preseed.sh | /bin/bash"
 # ============================================================================ #
