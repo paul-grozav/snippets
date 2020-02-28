@@ -475,5 +475,9 @@ d-i finish-install/reboot_in_progress note
 # directly, or use the apt-install and in-target commands to easily install
 # packages and run commands in the target system.
 #d-i preseed/late_command string apt-install zsh; in-target chsh -s /bin/zsh
-d-i preseed/late_command string in-target sed "/^.*linux.*\/vmlinuz-.* vga=normal /s/ quiet$/ bochs_drm.fbdev=off/" -i /boot/grub/grub.cfg
+
+# These only change the current GRUB config. On update, these changes might be
+# overwritten. We should also update the default config file used to generate
+# future new GRUB configs.
+d-i preseed/late_command string in-target wget -qO- https://gitlab.com/tancredi-paul-grozav/snippets/-/raw/master/debian_example.preseed.sh | bash
 # ============================================================================ #
