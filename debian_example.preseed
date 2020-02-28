@@ -10,10 +10,6 @@
 #     Once it switches to GRUB's graphics mode, press ESCAPE and wait a few
 #     seconds to drop you to a CLI. Then use these boot parameters:
 # install fb=none vga=normal auto-install/enable=true preseed/url=http://tiny.cc/gn2ikz hostname=debian domain=domain.com
-#     You'll probably want to also run:
-# sed "/^.*linux.*\/vmlinuz-.* vga=normal /s/ quiet$/ bochs_drm.fbdev=off/" -i \
-# /boot/grub/grub.cfg
-#     In order to make it boot into text mode, no graphical resolution.
 # 3. It also works with URL shortners like: http://tiny.cc/gn2ikz instead of
 # this file's complete raw url.
 # 4. See more about preseeds at the official documentation:
