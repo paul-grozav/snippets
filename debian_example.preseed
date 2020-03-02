@@ -94,7 +94,7 @@ d-i netcfg/get_domain string unassigned-domain
 # and adjust the following line.
 d-i netcfg/hostname string auto-debian
 
-# This iiiiis a workaround. When insttttalling from network, the hostname is
+# This is a workaround. When insttttalling from network, the hostname is
 # already set.
 # d-i pressed/late_command string\
 #    in-target /bin/bash -c 'echo desired_name > /etc/hostname'
