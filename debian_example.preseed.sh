@@ -23,9 +23,9 @@ apt -y autoremove &&
 echo &&
 echo "Upgrading all system packages ..." &&
 apt update &&
-apt upgrade &&
-apt dist-upgrade &&
-apt autoremove &&
+apt -y upgrade &&
+apt -y dist-upgrade &&
+apt -y autoremove &&
 
 
 # Remove unused kernels?
@@ -40,11 +40,11 @@ apt purge $(dpkg -l | grep linux-image | awk '{print$2}' |
 # Disable FrameBuffer(switching to video mode), for both the kernel and GRUB
 # Useful for when running the machine in QEMU's curses mode.
 # ============================================================================ #
-echo &&
-echo "Disabling video mode - boot in text only ..." &&
-sed "/^.*linux.*\/vmlinuz-.* vga=normal /s/ quiet$/ bochs_drm.fbdev=off/" \
-  -i /boot/grub/grub.cfg &&
-sed "/^terminal_output gfxterm/s/ gfxterm$/ console/" -i /boot/grub/grub.cfg &&
+#echo &&
+#echo "Disabling video mode - boot in text only ..." &&
+#sed "/^.*linux.*\/vmlinuz-.* vga=normal /s/ quiet$/ bochs_drm.fbdev=off/" \
+#  -i /boot/grub/grub.cfg &&
+#sed "/^terminal_output gfxterm/s/ gfxterm$/ console/" -i /boot/grub/grub.cfg &&
 
 
 echo "I am done running." &&
