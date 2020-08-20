@@ -9,13 +9,16 @@ echo "I run." &&
 echo &&
 echo "Removing packages to minimal ..." &&
 apt update &&
-apt purge -y \
-  gnome* *xorg* cpp* desktop-base desktop-file-utils cron geoip-database git \
-  git-man libasound2 lxde-common lightdm lightdm-gtk-greeter light-locker lxdm \
-  lxsession lxsession-data lxpolkit lxterminal lxmenu-data openbox vim-common \
-  vim-tiny x11-common x11-utils xauth xfonts-base xfonts-utils libx11-data \
-  libxvmc1 \
-  &&
+#apt purge -y \
+#  gnome* *xorg* cpp* desktop-base desktop-file-utils cron geoip-database git \
+#  git-man libasound2 lxde-common lightdm lightdm-gtk-greeter light-locker lxdm \
+#  lxsession lxsession-data lxpolkit lxterminal lxmenu-data openbox vim-common \
+#  vim-tiny x11-common x11-utils xauth xfonts-base xfonts-utils libx11-data \
+#  libxvmc1 \
+#  &&
+apt purge -y cron geoip-database vim-common vim-tiny xauth libx11-data ;
+echo -n "Press ENTER to acknowledge and continue ..." &&
+read a &&
 apt -y autoremove &&
 
 
