@@ -8,6 +8,7 @@ echo "I run." &&
 # ============================================================================ #
 echo &&
 echo "Removing packages to minimal ..." &&
+apt update &&
 apt purge -y \
   gnome* *xorg* cpp* desktop-base desktop-file-utils cron geoip-database git \
   git-man libasound2 lxde-common lightdm lightdm-gtk-greeter light-locker lxdm \
@@ -35,6 +36,12 @@ echo "Removing unused kernel packages ..." &&
 apt purge $(dpkg -l | grep linux-image | awk '{print$2}' |
   grep "\." | grep -v "linux-image-$(uname -r)")
 
+
+# Clean APT
+# ============================================================================ #
+echo &&
+echo "Cleaning APT ..." &&
+apt clean &&
 
 
 # Disable FrameBuffer(switching to video mode), for both the kernel and GRUB
